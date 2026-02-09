@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+main {
+    display: flex;
+    justify-content: center;
+    flex: 1 0 auto;
+    min-height: 500px;
+}
+
+
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(231, 108, 31, 1);
+    height: 81px;
+    width: 100%;
+
+}
+
+.header_layout {
+   display: flex;
+    justify-content: space-between; 
+    align-items: center;            
+    padding: 1rem 2rem;             
+    margin: 0 auto;
+    box-sizing: border-box;
+    gap: 1rem; 
+}
+
+.header_logo {
+    display: flex;
+    align-items: flex-start;
+}
+
+.header-menu{
+    width: 45px;
+    height: 35px;
+}
+
+/* Wrapper bleibt wie gehabt */
+.wrapper_container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    position: relative; /* für absolute Elemente wie Burger */
+}
+
+/* Rechteckbild */
+.hero_image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Burger-Bild */
+.burger_image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+}
+
+/* Text-Box unter Burger */
+.text_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      
+    margin-top: 84px;         
+    max-width: 100%;         
+    text-align: center;
+}
+
+/* H1 als Bild */
+.h1_image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 8px;       /* kleiner Abstand zu H3 */
+}
+
+/* H3 Text */
+.h3_text {
+    font-size: 16px;          /* wie gewünscht */
+    line-height: 1.4;
+    color: #333;              /* Beispielfarbe */
+    margin: 0;
+}
