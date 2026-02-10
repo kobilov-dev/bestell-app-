@@ -6,64 +6,95 @@
     <title>Bestell-App</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <header class="header_layout">
-       <div class="wrapper_container">
-      <!-- Linkes Logo -->
-      <a href="./index.html" class="header_logo_link">
-        <img
-          src="./assets/logos/Logo 02.png"
-          alt="Logo Bestell-App"
-          class="header_logo"
-        />
-      </a>
 
-      <!-- Rechtes Menü -->
-      <nav class="header_nav">
-        <button class="menu_button" aria-label="Hauptmenü">
-          <img src="./assets/logos/dehaze.png" alt="Menü" class="header_menu" />
-        </button>
-      </nav>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header_inner">
+        <a href="./index.html" class="header_logo_link">
+          <img
+            src="./assets/logos/Logo 02.png"
+            alt="Logo Bestell-App"
+            class="header_logo"
+          />
+        </a>
+
+        <nav class="header_nav">
+          <button class="menu_button" aria-label="Hauptmenü">
+            <img
+              src="./assets/logos/dehaze.png"
+              alt="Menü"
+              class="header_menu"
+            />
+          </button>
+        </nav>
       </div>
     </header>
 
     <main>
-      <div class="wrapper_container">
-        <!-- HERO -->
-        <img src="./assets/logos/Rectangle 11.png" class="hero_image" />
-        <img src="./assets/logos/Ellipse 16.png" class="burger_image" />
+      <!--hero -->
+      <section class="hero">
+        <img
+          src="./assets/logos/Rectangle 11.png"
+          alt="Hero Bild"
+          class="hero_image"
+        />
 
-        <div class="text_box">
-          <img src="./assets/logos/Frame 89.png" class="h1_image" />
-          <img src="./assets/logos/restauranth3.png" />
+        <img
+          src="./assets/logos/Ellipse 16.png"
+          alt="Burger"
+          class="burger_image"
+        />
+
+        <div class="hero_text wrapper">
+          <img
+            src="./assets/logos/Frame 89.png"
+            alt="Restaurant Name"
+            class="hero_title"
+          />
+          <img
+            src="./assets/logos/restauranth3.png"
+            alt="Restaurant Beschreibung"
+          />
         </div>
+      </section>
 
-        <!-- ===== BURGER ===== -->
-        <section class="meal-section">
-          <img src="./assets/logos/burger headline.png" class="meal-headline" />
+      <!-- Burger -->
+      <section class="meal-section">
+        <img
+          src="./assets/logos/burger headline.png"
+          alt="Burger"
+          class="meal-headline"
+        />
 
+        <div class="wrapper">
           <div class="menu-list">
+            <!-- ITEM 1 -->
             <article class="menu-item">
               <img
                 src="./assets/meal-img/Rectangle 10.png"
-                alt="Veggie burger"
+                alt="Veggie mushroom black burger"
                 class="menu-item-image"
               />
               <div class="menu-item-content">
-        
                 <div class="menu-item-header">
-                  <h3 class="menu-item-title">Beef red burger</h3>
-                  <span class="menu-item-price">12,90€</span>
+                  <h3 class="menu-item-title">Veggie mushroom black burger</h3>
+                  <span class="menu-item-price">16,90€</span>
                 </div>
-
                 <p class="menu-item-description">
-                  Beef, Chesse, Tomatoes, Lettuce, Onion
+                  Mixed green salad, Tomatoes, Edamame, Mushrooms
                 </p>
-
-                <!-- Button -->
-                <button class="menu-item-button">Add to basket</button>
+                <button
+                  class="menu-item-button"
+                  data-name="Veggie mushroom black burger"
+                  data-price="16.90"
+                >
+                  Add to basket
+                </button>
               </div>
             </article>
+
+            <!-- ITEM 2 -->
             <article class="menu-item">
               <img
                 src="./assets/meal-img/burger.png"
@@ -71,20 +102,24 @@
                 class="menu-item-image"
               />
               <div class="menu-item-content">
-        
                 <div class="menu-item-header">
                   <h3 class="menu-item-title">All meat burger</h3>
-                  <span class="menu-item-price">12,90€</span>
+                  <span class="menu-item-price">15,90€</span>
                 </div>
-
                 <p class="menu-item-description">
-                  Beef, Bacon, Dill pickles, Smoked chesse, Ketchup, BBQ sauce
+                  Beef, Bacon, Dill pickles, Smoked cheese, Ketchup, BBQ sauce
                 </p>
-
-                <!-- Button -->
-                <button class="menu-item-button">Add to basket</button>
+                <button
+                  class="menu-item-button"
+                  data-name="All meat burger"
+                  data-price="15.90"
+                >
+                  Add to basket
+                </button>
               </div>
             </article>
+
+            <!-- ITEM 3 -->
             <article class="menu-item">
               <img
                 src="./assets/meal-img/red-burge.png"
@@ -92,20 +127,24 @@
                 class="menu-item-image"
               />
               <div class="menu-item-content">
-        
                 <div class="menu-item-header">
-                  <h3 class="menu-item-title">Veggie burger</h3>
-                  <span class="menu-item-price">12,90€</span>
+                  <h3 class="menu-item-title">Veggie red burger</h3>
+                  <span class="menu-item-price">14,90€</span>
                 </div>
-
                 <p class="menu-item-description">
-                  Mixed green salad, Tomatoes, Edamame, Mushrooms
+                  Mixed salad, Tomatoes, Mushrooms, Vegan cheese
                 </p>
-
-                <!-- Button -->
-                <button class="menu-item-button">Add to basket</button>
+                <button
+                  class="menu-item-button"
+                  data-name="Veggie red burger"
+                  data-price="14.90"
+                >
+                  Add to basket
+                </button>
               </div>
             </article>
+
+            <!-- ITEM 4 -->
             <article class="menu-item">
               <img
                 src="./assets/meal-img/chicken-burger.png"
@@ -113,104 +152,148 @@
                 class="menu-item-image"
               />
               <div class="menu-item-content">
-        
                 <div class="menu-item-header">
-                  <h3 class="menu-item-title">Blg chicken burger</h3>
-                  <span class="menu-item-price">12,90€</span>
+                  <h3 class="menu-item-title">BBQ chicken burger</h3>
+                  <span class="menu-item-price">14,90€</span>
                 </div>
-
                 <p class="menu-item-description">
-                  Chicken, Chesse, Tomatoes, Lettuce, Onion, Bell pepper
+                  Chicken, Cheese, Lettuce, Tomato, Onion, BBQ sauce
                 </p>
-
-                <!-- Button -->
-                <button class="menu-item-button">Add to basket</button>
+                <button
+                  class="menu-item-button"
+                  data-name="BBQ chicken burger"
+                  data-price="14.90"
+                >
+                  Add to basket
+                </button>
               </div>
             </article>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- ===== PIZZA ===== -->
-        <section class="meal-section">
-          <img src="./assets/logos/pizza headline.png" class="meal-headline" />
+      <!--Pizza-->
+      <section class="meal-section">
+        <img
+          src="./assets/logos/pizza headline.png"
+          alt="Pizza"
+          class="meal-headline"
+        />
 
+        <div class="wrapper">
           <div class="menu-list">
+            <!-- ITEM 1 -->
             <article class="menu-item">
               <img
                 src="./assets/meal-img/Margherita.png"
-                alt="Margherita pizza"
+                alt="Pizza Margherita"
                 class="menu-item-image"
               />
               <div class="menu-item-content">
-        
                 <div class="menu-item-header">
                   <h3 class="menu-item-title">Pizza Margherita</h3>
                   <span class="menu-item-price">11,90€</span>
                 </div>
-
-                <p class="menu-item-description">
-                  Tomato Sauce, Mozzarella
-                </p>
+                <p class="menu-item-description">Tomato sauce, Mozzarella</p>
+                <button
+                  class="menu-item-button"
+                  data-name="Pizza Margherita"
+                  data-price="11.90"
+                >
+                  Add to basket
+                </button>
+              </div>
             </article>
+
+            <!-- ITEM 2 -->
             <article class="menu-item">
               <img
                 src="./assets/meal-img/Chorizo.png"
-                alt="Chorizo pizza"
+                alt="Pizza Chorizo"
                 class="menu-item-image"
               />
               <div class="menu-item-content">
-        
                 <div class="menu-item-header">
                   <h3 class="menu-item-title">Pizza Chorizo</h3>
                   <span class="menu-item-price">13,90€</span>
                 </div>
-
                 <p class="menu-item-description">
-                  Tomato Sauce, Mozzarella, Chorizo
+                  Tomato sauce, Mozzarella, Chorizo
                 </p>
+                <button
+                  class="menu-item-button"
+                  data-name="Pizza Chorizo"
+                  data-price="13.90"
+                >
+                  Add to basket
+                </button>
+              </div>
             </article>
+
+            <!-- ITEM 3 -->
             <article class="menu-item">
               <img
                 src="./assets/meal-img/Funghi.png"
-                alt="Funghi pizza"
+                alt="Pizza Funghi"
                 class="menu-item-image"
               />
               <div class="menu-item-content">
-        
                 <div class="menu-item-header">
                   <h3 class="menu-item-title">Pizza Funghi</h3>
                   <span class="menu-item-price">12,90€</span>
                 </div>
-
                 <p class="menu-item-description">
-                  Tomato Sauce, Mozzarella, Mushrooms, Red onions
+                  Tomato sauce, Mozzarella, Mushrooms, Red onions
                 </p>
+                <button
+                  class="menu-item-button"
+                  data-name="Pizza Funghi"
+                  data-price="12.90"
+                >
+                  Add to basket
+                </button>
+              </div>
             </article>
+
+            <!-- ITEM 4 -->
             <article class="menu-item">
               <img
                 src="./assets/meal-img/Formaggi.png"
-                alt="Formaggi pizza"
+                alt="Pizza Formaggi"
                 class="menu-item-image"
               />
               <div class="menu-item-content">
-        
                 <div class="menu-item-header">
-                  <h3 class="menu-item-title">Quatro Formaggi with Chicken</h3>
+                  <h3 class="menu-item-title">Quattro Formaggi with Chicken</h3>
                   <span class="menu-item-price">15,90€</span>
                 </div>
-
                 <p class="menu-item-description">
-                  Chicken, Mozzarella, Gorgonzola, Fontina, Parmegiano Reggiano
+                  Chicken, Mozzarella, Gorgonzola, Fontina, Parmesan
                 </p>
+                <button
+                  class="menu-item-button"
+                  data-name="Quattro Formaggi with Chicken"
+                  data-price="15.90"
+                >
+                  Add to basket
+                </button>
+              </div>
             </article>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- ===== SALAD ===== -->
-        <section class="meal-section">
-          <img src="./assets/logos/salad headline.png" class="meal-headline" />
+      <!--Salat-->
+      <section class="meal-section">
+        <img
+          src="./assets/logos/salad headline.png"
+          alt="Salad"
+          class="meal-headline"
+        />
 
+        <div class="wrapper">
           <div class="menu-list">
+            <!-- ITEM 1 -->
             <article class="menu-item">
               <img
                 src="./assets/meal-img/Beef salad.png"
@@ -218,16 +301,24 @@
                 class="menu-item-image"
               />
               <div class="menu-item-content">
-        
                 <div class="menu-item-header">
                   <h3 class="menu-item-title">Warm beef arugula salad</h3>
                   <span class="menu-item-price">16,90€</span>
                 </div>
-
                 <p class="menu-item-description">
-                  Beef, Arugula, Field salad, Greek feta, Cherry tomatoes, Sun-dried tomatoes, Balsamic dressing 
+                  Beef, Arugula, Feta, Cherry tomatoes, Balsamic dressing
                 </p>
+                <button
+                  class="menu-item-button"
+                  data-name="Warm beef arugula salad"
+                  data-price="16.90"
+                >
+                  Add to basket
+                </button>
+              </div>
             </article>
+
+            <!-- ITEM 2 -->
             <article class="menu-item">
               <img
                 src="./assets/meal-img/green Salad.png"
@@ -235,33 +326,49 @@
                 class="menu-item-image"
               />
               <div class="menu-item-content">
-        
                 <div class="menu-item-header">
-                  <h3 class="menu-item-title">Mini green Salad</h3>
+                  <h3 class="menu-item-title">Mini green salad</h3>
                   <span class="menu-item-price">7,90€</span>
                 </div>
-
                 <p class="menu-item-description">
                   Green salad, Cucumber, Carrots, Parsley, Radishes
                 </p>
+                <button
+                  class="menu-item-button"
+                  data-name="Mini green salad"
+                  data-price="7.90"
+                >
+                  Add to basket
+                </button>
+              </div>
             </article>
+
+            <!-- ITEM 3 -->
             <article class="menu-item">
               <img
                 src="./assets/meal-img/sea food salad.png"
-                alt="Sea food salad"
+                alt="Seafood salad"
                 class="menu-item-image"
               />
               <div class="menu-item-content">
-        
                 <div class="menu-item-header">
-                  <h3 class="menu-item-title">Green Salad with sea food</h3>
+                  <h3 class="menu-item-title">Green salad with seafood</h3>
                   <span class="menu-item-price">16,90€</span>
                 </div>
-
                 <p class="menu-item-description">
-                  Mixed greens, Cherry tomatoes, Red Onion, Musself, Squid rings, Shrimp, Mustard dressing with dill
+                  Mixed greens, Shrimp, Squid, Mussels, Dill mustard dressing
                 </p>
+                <button
+                  class="menu-item-button"
+                  data-name="Green salad with seafood"
+                  data-price="16.90"
+                >
+                  Add to basket
+                </button>
+              </div>
             </article>
+
+            <!-- ITEM 4 -->
             <article class="menu-item">
               <img
                 src="./assets/meal-img/Vegan.png"
@@ -269,25 +376,63 @@
                 class="menu-item-image"
               />
               <div class="menu-item-content">
-        
                 <div class="menu-item-header">
-                  <h3 class="menu-item-title">Vegan green Salad with tofu</h3>
+                  <h3 class="menu-item-title">Vegan green salad with tofu</h3>
                   <span class="menu-item-price">14,90€</span>
                 </div>
-
                 <p class="menu-item-description">
-                  Green salad, Cherry tomatoes, Red Onion, Cucumber, Carrots, Parsley, Radishes, Tofu
+                  Green salad, Cherry tomatoes, Cucumber, Radishes, Tofu
                 </p>
+                <button
+                  class="menu-item-button"
+                  data-name="Vegan green salad with tofu"
+                  data-price="14.90"
+                >
+                  Add to basket
+                </button>
+              </div>
             </article>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
 
-     <footer class="footer">
-      <div class="footer_content">
-        <img src="./assets/logos/Frame 91.png" alt="footer logo">
+    <!--Footer -->
+    <footer class="footer">
+      <img src="./assets/logos/Frame 91.png" alt="Footer Logo" />
+    </footer>
+
+    <!-- BASKET OVERLAY -->
+    <aside class="basket-overlay" id="basket">
+      <div class="basket-header">
+        <h2>Your Basket</h2>
+        <button class="basket-close" id="closeBasket">✕</button>
       </div>
-      </footer>
+
+      <div class="basket-items" id="basketItems">
+        <!-- Items kommen per JS rein -->
+      </div>
+
+      <div class="basket-summary">
+        <div class="basket-row">
+          <span>Subtotal</span>
+          <span id="subtotal">0,00€</span>
+        </div>
+        <div class="basket-row">
+          <span>Delivery fee</span>
+          <span id="delivery">4,99€</span>
+        </div>
+        <hr />
+        <div class="basket-row total">
+          <strong>Total</strong>
+          <strong id="total">0,00€</strong>
+        </div>
+
+        <button class="basket-buy">
+          Buy now (<span id="totalBtn">0,00€</span>)
+        </button>
+      </div>
+    </aside>
+    <script src="script.js"></script>
   </body>
 </html>
