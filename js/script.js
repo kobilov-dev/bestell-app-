@@ -18,15 +18,16 @@ function closeBasketFn() {
   basket.classList.remove("active");
 }
 
-closeBasket.addEventListener("click", closeBasketFn);
+closeBasket.onclick = closeBasketFn;
 
 function initButtons() {
   let i = 0;
   while (i < buttons.length) {
-    buttons[i].addEventListener("click", handleAddClick);
+    buttons[i].onclick = handleAddClick;
     i++;
   }
 }
+
 
 function handleAddClick(event) {
   const button = event.currentTarget;
@@ -74,6 +75,8 @@ function renderCart() {
   }
 
   updateTotals();
+  updateMobileCartCount();
+
 }
 
 
@@ -100,7 +103,7 @@ function removeItem(index) {
   syncButtons();
 }
 
-function updateTotals() {
+function calculateSubtotal() {
   let subtotal = 0;
   let i = 0;
 
@@ -108,41 +111,43 @@ function updateTotals() {
     subtotal += cart[i].price * cart[i].qty;
     i++;
   }
+  return subtotal;
+}
+
+function updateTotals() {
+  const subtotal = calculateSubtotal();
 
   let total = subtotal;
   if (cart.length > 0) {
     total += DELIVERY;
   }
-
   subtotalEl.textContent = subtotal.toFixed(2) + "€";
   totalEl.textContent = total.toFixed(2) + "€";
   totalBtnEl.textContent = total.toFixed(2) + "€";
+}
+
+
+function updateSingleButton(button) {
+  const name = button.dataset.name;
+  const index = findItemIndex(name);
+
+  if (index === -1) {
+    button.innerHTML = "Add to basket";
+  } else {
+    button.innerHTML = createButtonHTML(cart[index].qty, name);
+  }
 }
 
 function syncButtons() {
   let i = 0;
 
   while (i < buttons.length) {
-    const button = buttons[i];
-    const name = button.dataset.name;
-    const index = findItemIndex(name);
-
-    if (index === -1) {
-      button.innerHTML = "Add to basket";
-    } else {
-      button.innerHTML = `
-        <span class="added-text" style="color: rgba(231, 108, 31, 1);">
-          Added ${cart[index].qty}
-          <span class="btn-plus" data-name="${name}" style="color: rgba(231, 108, 31, 1);">+</span>
-        </span>
-      `;
-    }
-
+    updateSingleButton(buttons[i]);
     i++;
   }
-
   initPlusButtons();
 }
+
 
 function handlePlusClick(event) {
   event.stopPropagation();
@@ -153,7 +158,6 @@ function handlePlusClick(event) {
   if (index !== -1) {
     cart[index].qty++;
   }
-
   renderCart();
   syncButtons();
 }
@@ -173,3 +177,41 @@ function initPlusButtons() {
 
 
 initButtons();
+
+function updateHeadlines() {
+  const isMobile = window.innerWidth <= 560;
+  
+  const burgerTitle = document.querySelector("#head-burger .meal-title");
+
+  if (!burgerTitle) {
+    console.log("Fehler: Element #head-burger .meal-title wurde nicht gefunden!");
+    return;
+  }
+
+  if (isMobile) {
+    burgerTitle.innerText = "Burger";
+  } else {
+    burgerTitle.innerText = "Burger & Sandwiches";
+  }
+}
+
+window.addEventListener('resize', updateHeadlines);
+document.addEventListener('DOMContentLoaded', updateHeadlines); 
+
+
+updateHeadlines();
+
+function updateMobileCartCount() {
+  let totalQty = 0;
+  let i = 0;
+
+  while (i < cart.length) {
+    totalQty += cart[i].qty;
+    i++;
+  }
+  const badge = document.getElementById("mobileCartCount");
+  badge.textContent = totalQty;
+}
+
+
+
